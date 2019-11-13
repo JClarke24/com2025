@@ -30,4 +30,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+ app_title: "My Gallery"
+ app_description: "Welcome to My Gallery Where all your favorite memories can be together..."

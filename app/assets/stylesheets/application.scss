@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+header {
+  font-family: 'Times';
+  padding: 5px;
+}
+
+h1{
+  font-family: garamond;
+}
+
+h2{
+  font-size: 20px;
+}
