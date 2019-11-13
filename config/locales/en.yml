@@ -31,4 +31,9 @@
 
 en:
  app_title: "My Gallery"
- app_description: "Welcome to My Gallery Where all your favorite memories can be together..."
+ app_description: "A place to store and display all of your photos"
+
+ home:
+   home:
+     title: "My Gallery"
+     welcome: "Welcome to My Gallery, Where all your favorite memories can be together..."

@@ -20,11 +20,23 @@ header {
   font-family: 'Times';
   padding: 5px;
 }
+body {
+  background-color: #d3d3d3;
+}
+
+h1, h2{
+  color: #d3d3d3;
+  background-color: #000000;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+  margin: 0;
+}
 
 h1{
   font-family: garamond;
 }
 
 h2{
-  font-size: 20px;
+  font-size: 18px;
 }
