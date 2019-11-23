@@ -55,5 +55,7 @@ en:
    no_email: You must supply an email address.
    email_sent: Thank you. We will be in touch shortly.
 
- _header:
-  contact_us: Contact us
+ shared:
+  header:
+   contact_us: Contact us
+   back_home: Home
