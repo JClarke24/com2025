@@ -15,6 +15,7 @@ class AlbumsTest < ApplicationSystemTestCase
     click_on "New Album"
 
     fill_in "Date", with: @album.date
+    fill_in "Description", with: @album.description
     fill_in "Title", with: @album.title
     click_on "Create Album"
 
@@ -27,6 +28,7 @@ class AlbumsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Date", with: @album.date
+    fill_in "Description", with: @album.description
     fill_in "Title", with: @album.title
     click_on "Update Album"
 

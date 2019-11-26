@@ -2,8 +2,10 @@
 
 one:
   title: MyString
+  description: MyText
   date: 2019-11-26
 
 two:
   title: MyString
+  description: MyText
   date: 2019-11-26
