@@ -57,5 +57,6 @@ en:
 
  shared:
   header:
-   contact_us: Contact us
    back_home: Home
+   albums: Your Albums
+   contact_us: Contact us

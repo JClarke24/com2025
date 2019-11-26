@@ -5,6 +5,8 @@
   <%= @album.title %>
 </p>
 
+<%= image_tag @album.image.url(:medium) %>
+
 <p>
   <strong>Description:</strong>
   <%= @album.description %>
