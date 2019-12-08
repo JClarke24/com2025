@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pictures
   resources :albums
   root 'home#home'
   get 'contact', to: 'home#contact'

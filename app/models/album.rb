@@ -1,4 +1,6 @@
 class Album < ApplicationRecord
+  has_many :pictures, dependent: :destroy
+
   validates :title, presence: true
   validates :title, uniqueness: true
   validates :date, presence: true

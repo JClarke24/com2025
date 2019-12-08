@@ -33,5 +33,5 @@ class AlbumTest < ActiveSupport::TestCase
     album2.date = Date.current()
     album2.save
     refute album2.valid?
-  end 
+  end
 end
