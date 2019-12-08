@@ -15,6 +15,7 @@
       <tr>
         <td><%= picture.album.title %></td>
         <td><%= picture.title %></td>
+        <td> <%= image_tag picture.image.url(:medium) %>
         <td><%= picture.date %></td>
         <td><%= link_to 'Show', picture %></td>
         <td><%= link_to 'Edit', edit_picture_path(picture) %></td>

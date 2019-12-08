@@ -1,5 +1,5 @@
 <h1> <%= @album.title %> </h1>
-
+<br/>
 <p align="center"><%= image_tag @album.image.url(:large) %> </p>
 
 <p>
@@ -21,6 +21,7 @@
   <tbody> <% @album.pictures.each do |picture| %>
     <tr id="picture_<%= picture.id %>">
       <td> <%= picture.title %> </td>
+      <td> <%= image_tag picture.image.url(:medium) %> </td>
       <td> <%= link_to 'Show', picture %> </td>
       <td> <%= link_to 'Edit', edit_picture_path(picture) %> </td>
       <td> <%= link_to 'Destroy', picture, :method => :delete, :data => { :confirm => 'Are you sure?' }, :remote => true %> </td>
