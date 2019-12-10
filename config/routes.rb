@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :pictures
-  resources :albums
+
+  resources :albums do
+    resources :pictures, except: [:index, :edit]
+  end
+
   root 'home#home'
   get 'contact', to: 'home#contact'
   post 'request_contact', to: 'home#request_contact'
