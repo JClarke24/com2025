@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class AlbumsControllerTest < ActionDispatch::IntegrationTest
-  include Devise::TestHelpers
+  include Devise::Test::IntegrationHelpers
 
   setup do
     @album = albums(:one)

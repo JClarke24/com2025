@@ -1,18 +1,13 @@
 require 'test_helper'
 
 class PicturesControllerTest < ActionDispatch::IntegrationTest
-  include Devise::TestHelpers
+  include Devise::Test::IntegrationHelpers
 
   setup do
     @picture = pictures(:one)
     @album = albums(:one)
     @user = users(:one)
     sign_in @user
-  end
-
-  test "should get index" do
-    get pictures_url
-    assert_response :success
   end
 
   test "should get new" do
@@ -22,32 +17,22 @@ class PicturesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create picture" do
     assert_difference('Picture.count') do
-      post pictures_url, params: { picture: { album_id: @picture.album_id, date: @picture.date, title: @picture.title } }
+      post album_pictures_url(@album), params: { picture: { album_id: @picture.album_id, date: @picture.date, title: @picture.title } }
     end
 
-    assert_redirected_to picture_url(Picture.last)
+    assert_redirected_to album_picture_url(@album, Picture.last)
   end
 
   test "should show picture" do
-    get picture_url(@picture)
+    get album_picture_url(@album, @picture)
     assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_picture_url(@picture)
-    assert_response :success
-  end
-
-  test "should update picture" do
-    patch picture_url(@picture), params: { picture: { album_id: @picture.album_id, date: @picture.date, title: @picture.title } }
-    assert_redirected_to picture_url(@picture)
   end
 
   test "should destroy picture" do
     assert_difference('Picture.count', -1) do
-      delete picture_url(@picture)
+      delete album_picture_url(@album, @picture)
     end
 
-    assert_redirected_to pictures_url
+    assert_redirected_to album_url(@album)
   end
 end
