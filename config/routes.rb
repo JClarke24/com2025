@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   # Resource paths.
   resources :albums do
     resources :pictures, except: [:index, :edit]
