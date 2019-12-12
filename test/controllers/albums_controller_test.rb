@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class AlbumsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::TestHelpers
+
   setup do
     @album = albums(:one)
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do

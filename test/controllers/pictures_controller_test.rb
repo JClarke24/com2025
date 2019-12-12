@@ -1,9 +1,13 @@
 require 'test_helper'
 
 class PicturesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::TestHelpers
+
   setup do
     @picture = pictures(:one)
     @album = albums(:one)
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do
@@ -12,7 +16,7 @@ class PicturesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_picture_url(album_id: @picture.album_id)
+    get new_album_picture_url(album_id: @picture.album_id)
     assert_response :success
   end
 
