@@ -5,7 +5,8 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.order(:date)
+    #@albums = Album.order(:date)
+    @albums = Album.user_albums(current_user).order(:date)
   end
 
   # GET /albums/1
@@ -26,6 +27,7 @@ class AlbumsController < ApplicationController
   # POST /albums.json
   def create
     @album = Album.new(album_params)
+    @album.user = current_user
 
     respond_to do |format|
       if @album.save

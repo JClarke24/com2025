@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :update, :destroy]
   before_action :set_album, only: [:new, :create]
-  before_action :authenticate_user
+  before_action :authenticate_user!
 
   # GET /pictures/1
   # GET /pictures/1.json
