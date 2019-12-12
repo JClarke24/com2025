@@ -6,4 +6,8 @@
       <th><p> <%= link_to t('.contact_us'), contact_path %> </p></th>
     </tr>
   </table>
+
+  <% flash.each do |key, value| %>
+  <%= content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? %>
+  <% end %>
 </header>

@@ -14,11 +14,8 @@
   <body>
     <%= render 'shared/header' %>
 
-    <% flash.each do |key, value| %>
-    <%= content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? %>
-    <% end %>
+    <div class="content"> <%= yield %> </div>
 
-    <%= yield %>
-
+    <%= render 'shared/footer' %>
   </body>
 </html>
