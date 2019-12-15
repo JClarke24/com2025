@@ -1,10 +1,13 @@
 require 'test_helper'
 
 class AlbumTest < ActiveSupport::TestCase
+
+  # Called before any test. User fixtures to instantiate user.
   setup do
     @user = users(:one)
   end
 
+  # Tests empty album shouldn't be saved
   test 'should not save empty album' do
     album = Album.new
 
@@ -12,6 +15,7 @@ class AlbumTest < ActiveSupport::TestCase
     refute album.valid?
   end
 
+  # Tests an album should be saved
   test 'should save valid album' do
     album = Album.new
 
@@ -24,6 +28,7 @@ class AlbumTest < ActiveSupport::TestCase
     assert album.valid?
   end
 
+  # Tests album with same title shouldn't be saved
   test 'should not save duplicate album title' do
     album1 = Album.new
     album1.user = @user

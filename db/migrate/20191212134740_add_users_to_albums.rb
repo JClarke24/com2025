@@ -1,4 +1,5 @@
 class AddUsersToAlbums < ActiveRecord::Migration[5.2]
+  # Migration to add user to album relation
   def up
     add_reference :albums, :user, index: true
     Album.reset_column_information

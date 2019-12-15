@@ -9,3 +9,4 @@ welcome = Album.where(title: 'Welcome').first
 welcome.delete if welcome
 
 albums = Album.create([title: 'Welcome', description: 'To the gallery app.', date: Date.current()])
+pictures = Album.picture.create([title: 'Get started by adding pictures', date: Date.current()])

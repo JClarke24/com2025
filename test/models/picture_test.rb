@@ -2,10 +2,12 @@ require 'test_helper'
 
 class PictureTest < ActiveSupport::TestCase
 
+  # Called before any test. User fixtures to instantiate album.
   setup do
     @album = albums(:one)
   end
 
+  # Tests empty picture shouldn't be saved
   test 'should not save empty picture' do
     picture = Picture.new
 
@@ -13,6 +15,7 @@ class PictureTest < ActiveSupport::TestCase
     refute picture.valid?
   end
 
+  # Tests a picture should be saved
   test 'should save valid picture' do
     picture = Picture.new
 

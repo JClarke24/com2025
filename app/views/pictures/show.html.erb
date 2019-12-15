@@ -1,9 +1,11 @@
-<p> <strong>Album:</strong> <%= @picture.album.title %> </p>
+<!-- Displays one of the selected picture from an album -->
 
-<p> <strong>Title:</strong> <%= @picture.title %> </p>
+<p> <strong><%= t('.album') %></strong> <%= @picture.album.title %> </p>
+
+<p> <strong><%= t('.title') %></strong> <%= @picture.title %> </p>
 
 <p> <%= image_tag @picture.image.url(:large) %> </p>
 
-<p> <strong>Date:</strong> <%= @picture.date %> </p>
+<p> <strong><%= t('.date') %></strong> <%= @picture.date %> </p>
 
-<%= link_to 'Back', album_path(@picture.album_id) %>
+<%= link_to t('.back'), album_path(@picture.album_id) %>

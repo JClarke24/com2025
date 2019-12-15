@@ -1,13 +1,16 @@
 class HomeController < ApplicationController
 
+  # GET /home
   def home
 
   end
 
+  # GET /contact
   def contact
 
   end
 
+  # Checking if contact form is filled, using mailer to deliver email.
   def request_contact
     name = params[:name]
     email = params[:email]

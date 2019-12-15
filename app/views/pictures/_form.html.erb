@@ -1,3 +1,6 @@
+<!-- Displays a form for the user to enter a new picture.
+  Also display any errors that may occur when trying to submit-->
+
 <%= form_with(model: [@album, @picture], local: true, html: {multipart: true}) do |form| %>
   <% if picture.errors.any? %>
     <div id="error_explanation">

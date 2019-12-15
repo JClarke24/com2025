@@ -20,7 +20,7 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.save
-        format.html { redirect_to album_picture_path(@album, @picture), notice: 'Picture was successfully created.' }
+        format.html { redirect_to album_picture_path(@album, @picture), notice: I18n.t('pictures.create.success') }
         format.json { render :show, status: :created, location: @picture }
       else
         format.html { render :new }
@@ -34,8 +34,8 @@ class PicturesController < ApplicationController
   def destroy
     @picture.destroy
     respond_to do |format|
-      format.html { redirect_to album_path, notice: 'Picture was successfully destroyed.' }
-      format.js   { flash[:notice] = 'Picture was successfully destroyed.'; render inline: "location.reload();"}
+      format.html { redirect_to album_path, notice: I18n.t('pictures.destroy.success') }
+      format.js   { flash[:notice] = I18n.t('pictures.destroy.success'); render inline: "location.reload();"}
       format.json { head :no_content }
     end
   end
@@ -45,7 +45,7 @@ class PicturesController < ApplicationController
     def set_picture
       @picture = Picture.find(params[:id])
     end
-
+    #
     def set_album
       @album = Album.find_by(id: params[:album_id]) || Album.find(picture_params[:album_id])
     end

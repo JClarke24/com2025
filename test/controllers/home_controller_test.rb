@@ -3,6 +3,7 @@ require 'test_helper'
 class HomeControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
+  # Tests home action
   test "should get home" do
     get root_url
     assert_response :success
@@ -12,6 +13,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_select 'h2', 'Welcome to My Gallery, Where all your favorite memories can be together...'
   end
 
+  # Tests contact action
   test "should get contact" do
     get contact_url
     assert_response :success
@@ -23,6 +25,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_select 'p', 'Complete the following form to get in touch with us.'
   end
 
+  # Tests request contact post action with no email
   test "should post request contact but no email" do
     post request_contact_url
 
@@ -31,6 +34,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_nil flash[:notice]
   end
 
+  # Tests request contact post action
   test "should post request contact" do
     post request_contact_url, params:
       {name: "Jonathan", email: "jc01663@surrey.ac.uk", telephone: "0123456789", message: "Hello"}

@@ -1,12 +1,14 @@
-<h1>Albums</h1>
+<!-- Displays a list of all the albums-->
+
+<h1><%= t('.title') %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Picture</th>
-      <th>Description</th>
-      <th>Date</th>
+      <th><%= t('.thtitle') %></th>
+      <th><%= t('.thpicture') %></th>
+      <th><%= t('.thdescription') %></th>
+      <th><%= t('.thdate') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +20,9 @@
         <td><%= image_tag album.image.url(:thumb) %></td>
         <td><%= album.description %></td>
         <td><%= album.date %></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('.show'), album %></td>
+        <td><%= link_to t('.edit'), edit_album_path(album) %></td>
+        <td><%= link_to t('.destroy'), album, method: :delete, data: { confirm: t('.confirm') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Album', new_album_path %>
+<%= link_to t('.new'), new_album_path %>

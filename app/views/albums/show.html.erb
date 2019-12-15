@@ -1,25 +1,27 @@
+<!-- Displays one of the selected albums along with all the pictures it may have -->
+
 <h1> <%= @album.title %> </h1>
 <br/>
 <p align="center"><%= image_tag @album.image.url(:large) %> </p>
 
-<p align="center"> <strong>Description:</strong> <%= @album.description %> </p>
+<p align="center"> <strong><%= t('.description') %></strong> <%= @album.description %> </p>
 
-<p align="center"> <strong>Date:</strong> <%= @album.date %> </p>
+<p align="center"> <strong><%= t('.date') %></strong> <%= @album.date %> </p>
 
 <p align="center">
-<%= link_to 'Add Picture', new_album_picture_path(album_id: @album) %> |
-<%= link_to 'Edit', edit_album_path(@album) %> |
-<%= link_to 'Back', albums_path %>
+<%= link_to t('.add'), new_album_picture_path(album_id: @album) %> |
+<%= link_to t('.edit'), edit_album_path(@album) %> |
+<%= link_to t('.back'), albums_path %>
 </p>
 
-<h3>Pictures:</h3>
+<h3><%= t('.pictures') %></h3>
 <table>
   <tbody> <% @album.pictures.order(:date).each do |picture| %>
     <tr id="picture_<%= picture.id %>">
       <td> <%= picture.title %> </td>
       <td> <%= image_tag picture.image.url(:medium) %> </td>
-      <td> <%= link_to 'Show', album_picture_path(@album.id, picture) %> </td>
-      <td> <%= link_to 'Destroy', album_picture_path(@album.id, picture), :method => :delete, :data => { :confirm => 'Are you sure?' }, :remote => true %> </td>
+      <td> <%= link_to t('.show'), album_picture_path(@album.id, picture) %> </td>
+      <td> <%= link_to t('.destroy'), album_picture_path(@album.id, picture), :method => :delete, :data => { :confirm => 'Are you sure?' }, :remote => true %> </td>
     </tr>
     <% end %>
   </tbody>

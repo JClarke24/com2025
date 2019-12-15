@@ -55,6 +55,60 @@ en:
    no_email: You must supply an email address.
    email_sent: Thank you. We will be in touch shortly.
 
+ contact_mailer:
+  contact_email:
+   dear: Dear
+   emailContent: Could you get in touch with me please?
+
+ albums:
+  index:
+   title: Albums
+   thtitle: Title
+   thpicture: Picture
+   thdescription: Description
+   thdate: Date
+   show: Show
+   edit: Edit
+   destroy: Destroy
+   confirm: Are you sure?
+   new: New Album
+  show:
+   description: 'Description:'
+   date: 'Date:'
+   add: Add Picture
+   edit: Edit
+   back: Back
+   pictures: 'Pictures:'
+   show: Show
+   destroy: Destroy
+  new:
+   title: New Album
+   back: Back
+  edit:
+   title: Editing Album
+   show: Show
+   back: Back
+  create:
+   success: Album was successfully created.
+  update:
+   success: Album was successfully updated.
+  destroy:
+   success: Album was successfully destroyed.
+
+ pictures:
+  show:
+   album: 'Album:'
+   title: 'Title:'
+   date: 'Date:'
+   back: Back
+  new:
+   title: New Picture
+   back: Back
+  create:
+   success: Picture was successfully created.
+  destroy:
+   success: Picture was successfully destroyed.
+
  shared:
   header:
    back_home: Home

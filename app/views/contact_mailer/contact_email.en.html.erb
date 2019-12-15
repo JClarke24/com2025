@@ -1,5 +1,7 @@
-<p> <%= "Dear #{t('app_title')}," %> </p>
-<p> <%= "Could you get in touch with me please?" %> </p>
+<!-- This is the default email used when previewing the mailer -->
+
+<p> <%= t('.dear') + " " + t('app_title') + "," %> </p>
+<p> <%= t('.emailContent') %> </p>
 
 <dl>
   <dt>Name:</dt>

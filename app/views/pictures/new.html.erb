@@ -1,5 +1,7 @@
-<h1>New Picture</h1>
+<!-- Displays the picture new page, with the form being rendered-->
+
+<h1><%= t('.title') %></h1>
 
 <%= render 'form', picture: @picture %>
 
-<%= link_to 'Back', album_path(@picture.album_id) %>
+<%= link_to t('.back'), album_path(@picture.album_id) %>

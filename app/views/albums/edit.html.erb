@@ -1,6 +1,8 @@
-<h1>Editing Album</h1>
+<!-- Display the album edit page, with the form being rendered -->
+
+<h1><%= t('.title') %></h1>
 
 <%= render 'form', album: @album %>
 
-<%= link_to 'Show', @album %> |
-<%= link_to 'Back', albums_path %>
+<%= link_to t('.show'), @album %> |
+<%= link_to t('.back'), albums_path %>
